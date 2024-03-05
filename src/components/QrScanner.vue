@@ -1,6 +1,4 @@
 <template>
-	<button class="qr-button" @click="showScanPopup">Start scanning QR codes!</button>
-	<p>!---Debug---!</p>
 	<p>{{context}}</p>
 </template>
 
