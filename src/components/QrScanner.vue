@@ -1,26 +1,35 @@
 <template>
-	<div class="scanner">
-		<qrcode-stream @detect="onDetect"></qrcode-stream>
-	</div>
-	<p>!----------------SCANNER COMPONENT DEBUG----------------!</p>
-	<p v-if="content">{{ content }}</p>
+	<button class="qr-button" @click="showScanPopup">Start scanning QR codes!</button>
+	<p>!---Debug---!</p>
+	<p>{{context}}</p>
 </template>
 
 <script setup lang="ts">
-import { QrcodeStream } from 'vue-qrcode-reader'
-import { ref } from "vue";
-const onDetect = (ctx: object) => {
-	content.value = ctx
+import {onMounted, ref} from "vue";
+import { WebApp } from "@grammyjs/web-app";
+const context = ref<string>('')
+const showScanPopup = () => {
+	WebApp.showScanQrPopup({text: 'Scan your QR code! :)'}, async (data: string) => {
+		context.value = data
+	})
 }
-const content = ref<object>({})
+
+onMounted(() => {
+	WebApp.ready()
+	// main button settings
+	WebApp.expand()
+	WebApp.MainButton.text = 'Close QR Scanner'
+	WebApp.MainButton.isVisible = true
+	WebApp.MainButton.onClick(() => WebApp.close())
+})
 </script>
 
 <style scoped>
-.scanner {
+.qr-button {
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	width: 40vh;
-	height: 40vh;
+	justify-content: center;
+	background: #f2f2f2;
+	border: 1px solid black;
 }
 </style>
