@@ -13,6 +13,6 @@ onMounted(() => {
 
 <template>
 	<RouterView />
-	<p>!----------------DEBUG----------------!</p>
+	<p>!----------------APP DEBUG----------------!</p>
 </template>
 

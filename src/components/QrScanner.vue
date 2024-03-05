@@ -1,8 +1,8 @@
 <template>
-
 	<div class="scanner">
 		<qrcode-stream @detect="onDetect"></qrcode-stream>
 	</div>
+	<p>!----------------SCANNER COMPONENT DEBUG----------------!</p>
 	<p v-if="content">{{ content }}</p>
 </template>
 
