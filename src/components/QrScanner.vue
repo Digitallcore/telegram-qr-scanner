@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
+import { QrcodeStream } from 'vue-qrcode-reader'
 import {ref} from "vue";
-
 const onDetect = (ctx: object) => {
 	content.value = ctx
 }
