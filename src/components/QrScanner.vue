@@ -19,7 +19,7 @@ const content = ref<object>({})
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 35vh;
-	height: 35vh;
+	width: 40vh;
+	height: 40vh;
 }
 </style>
