@@ -17,7 +17,7 @@ onMounted(() => {
 	WebApp.ready()
 	// main button settings
 	showScannerPopup()
-	context.value.length && WebApp.expand()
+	context.value.length > 0 && WebApp.expand()
 	WebApp.MainButton.text = 'Close QR Scanner'
 	WebApp.MainButton.isVisible = true
 	WebApp.MainButton.onClick(() => WebApp.close())
