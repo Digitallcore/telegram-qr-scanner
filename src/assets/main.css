@@ -33,3 +33,11 @@ a,
     padding: 0 2rem;
   }
 }
+
+.qr-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  border: 1px solid black;
+}

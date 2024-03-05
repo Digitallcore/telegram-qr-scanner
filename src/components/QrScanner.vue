@@ -14,6 +14,7 @@ const showScannerPopup = () => {
 }
 
 onMounted(() => {
+	WebApp.
 	WebApp.ready()
 	// main button settings
 	showScannerPopup()
@@ -23,13 +24,3 @@ onMounted(() => {
 	WebApp.MainButton.onClick(() => WebApp.close())
 })
 </script>
-
-<style scoped>
-.qr-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #f2f2f2;
-	border: 1px solid black;
-}
-</style>
